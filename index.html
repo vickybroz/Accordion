@@ -59,11 +59,11 @@
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script>
 $('.accordion').each(function () {
-    var $accordian = $(this);
-    $accordian.find('.accordion-head').on('click', function () {
+    var $acordion = $(this);
+    $acordion.find('.accordion-head').on('click', function () {
         $(this).parent().find(".accordion-head i").removeClass('fa-minus-circle').addClass('fa-plus-circle');
         $(this).removeClass('open').addClass('close-acc');
-        $accordian.find('.accordion-body').slideUp();
+        $acordion.find('.accordion-body').slideUp();
         if (!$(this).next().is(':visible')) {
             $(this).removeClass('close-acc').addClass('open');
             $(this).next().slideDown();
