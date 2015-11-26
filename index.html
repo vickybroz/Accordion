@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Accordion</title>
+
+<style>
+  .accordion {
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+  .accordion-body {
+      display:none;
+      border-bottom:3px solid #e7e7e7;
+      font-size: 15px;
+      padding:5px;
+      background-color:#f8f8f8;
+  }
+  .accordion-head {
+      cursor: pointer;
+      margin-top: 3px;
+      font-size: 17px;
+      color: #07617b;
+      background-color: #e7e7e7;
+      padding-left: 5px;
+      margin-top: 10px;
+      text-transform: uppercase;
+      padding:5px;
+      margin-bottom:0;
+  }
+  .accordion-head i {
+      float:right;
+  }
+</style>
+</head>
+<body>
+<div class="accordion">
+    	<h3 class="accordion-head">¿Qué le dice el 2 al 0?  <i class="fa fa-plus-circle"></i></h3>
+
+    <div class="accordion-body">
+        <p>¡¡Veinte conmigo!!!</p>
+    </div>
+</div>
+<div class="accordion">
+    	<h3 class="accordion-head">¿Cómo se le llama a un boomerang que no vuelve? <i class="fa fa-plus-circle"></i></h3>
+
+    <div class="accordion-body">
+        <p>Palo</p>
+    </div>
+</div>
+<div class="accordion">
+    	<h3 class="accordion-head">¿Cuál es el refresco mas oscuro? <i class="fa fa-plus-circle"></i></h3>
+
+    <div class="accordion-body">
+        <p>Seve Na'</p>
+    </div>
+</div>
+
+<script>
+$('.accordion').each(function () {
+    var $accordian = $(this);
+    $accordian.find('.accordion-head').on('click', function () {
+        $(this).parent().find(".accordion-head i").removeClass('fa-minus-circle').addClass('fa-plus-circle');
+        $(this).removeClass('open').addClass('close-acc');
+        $accordian.find('.accordion-body').slideUp();
+        if (!$(this).next().is(':visible')) {
+            $(this).removeClass('close-acc').addClass('open');
+            $(this).next().slideDown();
+            $(this).parent().find(".accordion-head i").removeClass('fa-plus-circle').addClass('fa-minus-circle');
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
